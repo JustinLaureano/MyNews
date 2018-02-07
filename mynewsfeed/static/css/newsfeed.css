@@ -6,12 +6,20 @@
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: "Times New Roman", serif;
   font-size: 2.25rem;
 }
 
 .blog-header-logo:hover {
   text-decoration: none;
+}
+
+.jumbotron {
+    background: url("../images/jumbo_bg.jpg");
+    background-size: cover;
+    background-position: top center;
+    height: auto;
+    width:100%;
 }
 
 body {
@@ -21,12 +29,12 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+h1, h2, h3, h4, h5, h6, a, p.text-muted {
+  font-family: "Times New Roman", serif;
 }
 
 p {
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 a {
@@ -37,6 +45,7 @@ a:hover {
   color: blue;
   text-decoration: none;
 }
+
 
 .display-4 {
   font-size: 2.5rem;
@@ -88,7 +97,7 @@ a:hover {
 }
 
 .card-text {
-  display: none;
+  //display: none;
 }
 
 

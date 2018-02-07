@@ -14,7 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/newsfeed.css' %}" />
 </head>
 
@@ -56,10 +55,15 @@
         </div>
 
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-            <div class="col-md-6 px-0">
-                <h1 class="display-5 font-italic">Title of the top reddit post from all</h1>
-                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-                <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+            <div class="row">
+                <div class="col-md-6 px-0">
+
+                </div>
+                <div class="col-md-6 px-0 rounded bg-dark">
+                    <h1 class="display-5 font-italic text-right">Title of the top reddit post from all</h1>
+                    <p class="lead my-3 text-right">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+                    <p class="lead mb-0 text-right"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+                </div>
             </div>
         </div>
 
@@ -67,33 +71,27 @@
 
             <div class="col-md-6">
                 <div class="card box-shadow">
-                    <div class="card-header"><h5>Reddit - All</h5></div>
+                    <div class="card-header"><h5><a href="https://www.reddit.com/r/all/">Reddit - All</a></h5></div>
 
                     <ul class="list-group list-group-flush">
+
                         {% for post in reddit_all %}
                         <li class="list-group-item">
-                            <a href="#" class="card-title">{{ post.title }}</a>
-                            <p class="card-text text-muted">Submitted to <a href="#">{{ post.subreddit }}</a></p>
+                            <a href="#" class="card-title .display 4">{{ post.title }}</a>
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="text-muted">submitted to <a href="#" class="text-muted">r/{{ post.subreddit }}</a></p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="text-muted"><a href="{{ post.comments }}" class="text-muted">Comments</a></p>
+                                </div>
+                            </div>
+
                         </li>
                         {% endfor %}
 
-                        <!--<li class="list-group-item">-->
-                            <!--<a href="#" class="card-title">Indoor-outdoor living area with a tall central fireplace in this home in Austin, Texas. [1036 × 1442]</a>-->
-                            <!--<p class="card-text text-muted">Submitted 12 hours ago to <a href="#">r/RoomPorn</a></p>-->
-                        <!--</li>-->
-
-                        <!--<li class="list-group-item">-->
-                            <!--<a href="#" class="card-title">Indoor-outdoor living area with a tall central fireplace in this home in Austin, Texas. [1036 × 1442]</a>-->
-                            <!--<p class="card-text text-muted">Submitted 12 hours ago to <a href="#">r/RoomPorn</a></p>-->
-                        <!--</li>-->
-
-                        <!--<li class="list-group-item">-->
-                            <!--<a href="#" class="card-title">Indoor-outdoor living area with a tall central fireplace in this home in Austin, Texas. [1036 × 1442]</a>-->
-                            <!--<p class="card-text text-muted">Submitted 12 hours ago to <a href="#">r/RoomPorn</a></p>-->
-                        <!--</li>-->
-
-
                     </ul>
+
                 </div> <!-- card box-shadow -->
             </div> <!-- col-md-6 -->
         </div>
