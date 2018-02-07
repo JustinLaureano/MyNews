@@ -22,7 +22,7 @@ for link in my_links.find_all('a'):
 
 
 for index, title in enumerate(title_list):
-    new_dict = {"models": "mynewsfeed.CourierPost", "pk": index + 1, "fields":
+    new_dict = {"model": "mynewsfeed.CourierPost", "pk": index + 1, "fields":
         {"title": title, "url": url_list[index]}}
     news_list.append(new_dict)
 

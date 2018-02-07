@@ -86,7 +86,6 @@
                                     <p class="text-muted"><a href="{{ post.comments }}" class="text-muted">Comments</a></p>
                                 </div>
                             </div>
-
                         </li>
                         {% endfor %}
 
@@ -94,7 +93,33 @@
 
                 </div> <!-- card box-shadow -->
             </div> <!-- col-md-6 -->
-        </div>
+
+            <div class="col-md-6">
+                <div class="card box-shadow">
+                    <div class="card-header"><h5><a href="http://thecourier.com/">The Courier</a></h5></div>
+
+                    <ul class="list-group list-group-flush">
+
+                        {% for post in courier_all %}
+                        <li class="list-group-item">
+                            <a href="#" class="card-title .display 4">{{ post.title }}</a>
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="text-muted">submitted today</p>
+                                </div>
+                                <div class="col-4">
+                                    <p class="text-muted"><a href="{{ post.url }}" class="text-muted">Read More</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div> <!-- card box-shadow -->
+            </div> <!-- col-md-6 -->
+
+        </div> <!-- The end of the news feed -->
     </div>
 
     <div class="container">
