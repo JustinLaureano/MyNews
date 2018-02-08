@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <div class="row"> <!-- The start of the news feed -->
+        <div class="row"> <!-- The start of the news feed first row -->
 
             <div class="col-md-6">
                 <div class="card box-shadow">
@@ -119,7 +119,57 @@
                 </div> <!-- card box-shadow -->
             </div> <!-- col-md-6 -->
 
-        </div> <!-- The end of the news feed -->
+        </div> <!-- The end of the news feed first row -->
+
+        <div class="row"> <!-- The start of the news feed second row -->
+
+            <div class="col-md-6">
+                <div class="card box-shadow">
+                    <div class="card-header"><h5><a href="https://www.nytimes.com/">NY Times - Top Stories</a></h5></div>
+
+                    <ul class="list-group list-group-flush">
+
+                        {% for post in ny_times %}
+                        <li class="list-group-item">
+                            <a href="{{ post.url }}" class="card-title .display 4">{{ post.title }}</a>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="text-muted">{{ post.summary }}</p>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div> <!-- card box-shadow -->
+            </div> <!-- col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="card box-shadow">
+                    <div class="card-header"><h5><a href="http://theguardian.com/">The Guardian</a></h5></div>
+
+                    <ul class="list-group list-group-flush">
+
+                        {% for post in guardian %}
+                        <li class="list-group-item">
+                            <a href="{{ post.url }}" class="card-title .display 4">{{ post.title }}</a>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="text-muted">{{ post.trailText }}</p>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+
+                </div> <!-- card box-shadow -->
+            </div> <!-- col-md-6 -->
+
+        </div> <!-- The end of the news feed second row -->
+
+
     </div>
 
     <div class="container">
